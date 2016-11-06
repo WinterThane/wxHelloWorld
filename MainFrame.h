@@ -4,16 +4,9 @@
 
 #include "wx/wx.h"
 
-enum ID_Lists
+enum ID_LIST
 {
-	OK_BUTTON = 400,
-	ADD_BUTTON,
-
-	MNU_ADD,
-	MNU_EXIT,
-
-	LIST_ITEMS,
-	CHK_BOX
+	PAINT_WINDOW = 400
 };
 
 class MainFrame : public wxFrame
@@ -21,21 +14,11 @@ class MainFrame : public wxFrame
 public:
 	MainFrame(const wxString &title, const wxPoint &pos, const wxSize &size);
 
-	void OnOk(wxCommandEvent &event);
-	void OnAdd(wxCommandEvent &event);
-	void OnExit(wxCommandEvent &event);
-	void OnSelected(wxCommandEvent &event);
-	void OnSelectionChanged(wxCommandEvent &event);
-
-	void AddEnd(wxCommandEvent &event);
-	void AddBeginning(wxCommandEvent &event);
+	void OnPaint(wxPaintEvent &event);
+	void OnMotion(wxMouseEvent &event);
 
 private:
-	wxListBox *listBox;
-	wxTextCtrl *txtControl;
-	wxCheckBox *chkList;
-
-	DECLARE_EVENT_TABLE()
+	wxWindow *paintWindow;
 };
 
 #endif

@@ -11,7 +11,7 @@ IMPLEMENT_APP(HelloWorldApp)
 
 bool HelloWorldApp::OnInit()
 {
-	MainFrame *frame = new MainFrame(_T("Control example"), wxPoint(60, 70), wxSize(500, 600));
+	MainFrame *frame = new MainFrame(_T("Painting"), wxPoint(60, 70), wxSize(500, 600));
 
 	frame->Show(TRUE);
 
